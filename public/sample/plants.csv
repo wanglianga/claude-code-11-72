@@ -1,0 +1,4 @@
+plant_id,name,short_name,timezone,cod_limit,nh3n_limit
+P1,澄川水务第一净水厂,一厂,Asia/Shanghai,50,5
+P2,澄川水务河西分厂,河西厂,Asia/Shanghai,50,5
+P3,澄川水务北滩厂,北滩厂,Asia/Shanghai,60,8

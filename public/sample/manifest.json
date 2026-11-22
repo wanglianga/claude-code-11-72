@@ -1,0 +1,109 @@
+{
+  "name": "排口负荷离线复核样例（虚构）",
+  "description": "2026-11-18 澄川水务三个厂站、四个排口的接入资料。CC-E01 含 40 秒高浓度冲击、13:00 校准中途生效、02:00–02:03 三分钟缺测、04:00 探头更换与 20:00 旁路；迟到补录在申报后到达。",
+  "generatedAt": "2026-11-20T01:00:00.000Z",
+  "timezone": "Asia/Shanghai",
+  "baseFiles": [
+    {
+      "fileName": "plants.csv",
+      "kind": "PLANT_REGISTER",
+      "receivedAt": "2026-11-19T06:10:00+08:00",
+      "rowCount": 3,
+      "sha256": "4790a228992dea0c5c3b22c192b620af434788e08a1d1480a689873341ef0753",
+      "note": "厂站与排放限值台账"
+    },
+    {
+      "fileName": "points.csv",
+      "kind": "POINT_REGISTER",
+      "receivedAt": "2026-11-19T06:10:00+08:00",
+      "rowCount": 4,
+      "sha256": "4809813e2d4347a319f3a10038ce59991eda6571d675bbfb6a28bc967e1f8d30",
+      "note": "排口点位实体（含编号复用标记）"
+    },
+    {
+      "fileName": "instruments.csv",
+      "kind": "INSTRUMENT_REGISTER",
+      "receivedAt": "2026-11-19T06:10:00+08:00",
+      "rowCount": 14,
+      "sha256": "bc4639ecb3a43229dcd58339fa65f5818f0b5e999d34f3fc13be204e54f2ae5b",
+      "note": "仪表实例台账（含时钟偏移）"
+    },
+    {
+      "fileName": "bindings.csv",
+      "kind": "BINDING_REGISTER",
+      "receivedAt": "2026-11-19T06:10:00+08:00",
+      "rowCount": 14,
+      "sha256": "462407e37e57c4179d0070c0d0d387c77910d0c8e03aabc760f67927adcbe3e9",
+      "note": "仪表—点位—指标绑定有效期"
+    },
+    {
+      "fileName": "calibrations.csv",
+      "kind": "CALIBRATION_REGISTER",
+      "receivedAt": "2026-11-19T06:10:00+08:00",
+      "rowCount": 4,
+      "sha256": "24f5a0b0eb4462171ee6d09120c21c93e541d7cf8cdf68e83e188bb6e5991578",
+      "note": "校准系数与生效时刻"
+    },
+    {
+      "fileName": "states.csv",
+      "kind": "STATE_LOG",
+      "receivedAt": "2026-11-19T06:10:00+08:00",
+      "rowCount": 19,
+      "sha256": "fd809da254113c065a1397ad72a08d2e4345dafd4d84871b800448d9368f2702",
+      "note": "冲洗/校准/旁路/故障状态台账"
+    },
+    {
+      "fileName": "readings_CC-E01_2026-11-18.csv",
+      "kind": "READINGS",
+      "receivedAt": "2026-11-19T07:20:00+08:00",
+      "rowCount": 25863,
+      "sha256": "d66ccc8b932a583b44fa8fb2ca1689d9e82d00df9cb9a90293c23f0cfd3308a2",
+      "note": "CC-E01 2026-11-18 原始读数（25863 行，含三指标）"
+    },
+    {
+      "fileName": "readings_CC-E02_2026-11-18.csv",
+      "kind": "READINGS",
+      "receivedAt": "2026-11-19T07:25:00+08:00",
+      "rowCount": 4317,
+      "sha256": "53d4d0b562cd63d08a37fd526bfa71924df5117607e65d80d4deb287275465f3",
+      "note": "CC-E02 2026-11-18 原始读数（4317 行，含三指标）"
+    },
+    {
+      "fileName": "readings_HX-OUT_2026-11-18.csv",
+      "kind": "READINGS",
+      "receivedAt": "2026-11-19T07:25:00+08:00",
+      "rowCount": 4317,
+      "sha256": "21e423bccfbd8e1fa0628a1a705892d9d56b0082c068c1dd8af51bfa23e68243",
+      "note": "HX-OUT 2026-11-18 原始读数（4317 行，含三指标）"
+    },
+    {
+      "fileName": "readings_ZB-01_2026-11-18.csv",
+      "kind": "READINGS",
+      "receivedAt": "2026-11-19T07:25:00+08:00",
+      "rowCount": 849,
+      "sha256": "eb9e127ad81228c1836f05fd087e5bedbe0829708021256582084552543c4581",
+      "note": "ZB-01 2026-11-18 原始读数（849 行，含三指标）"
+    }
+  ],
+  "lateFile": {
+    "fileName": "late_CC-E01_2026-11-19.csv",
+    "kind": "LATE_BATCH",
+    "receivedAt": "2026-11-19T16:40:00+08:00",
+    "rowCount": 54,
+    "sha256": "3db852de6086b84ec37270def448fd0e4c79f5ef07f66172048c7fc6e2f4b2fe",
+    "note": "迟到补录：CC-E01 02:00–02:03 缺测段的 10 秒读数，申报出具后才到达。"
+  },
+  "focus": {
+    "pointCode": "CC-E01",
+    "day": "2026-11-18",
+    "declarationCutoff": "2026-11-19T07:20:00+08:00",
+    "scenario": [
+      "40 秒高浓度冲击：09:15:00–09:15:40，边界读数等于限值，内部 140/145/132 mg/L",
+      "校准中途生效：13:00:00，切开片段，前后系数分别为 1.00/0.00 与 1.08/-1.20",
+      "三分钟缺测：02:00–02:03，负荷与覆盖率均扣除，缺口影响单独量化",
+      "设备交接：04:00 COD 探头整机更换，点位编号复用按实例衔接",
+      "排除时段：01:00–01:08 冲洗、20:00–20:04 旁路，均不并入排放",
+      "迟到补录：16:40 到达的 02:00–02:03 读数，只能形成锁定来源范围的重算候选"
+    ]
+  }
+}

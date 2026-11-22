@@ -1,0 +1,17 @@
+services:
+  review-console:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: outfall-review-console:1.0.0
+    container_name: outfall-review-console
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    read_only: false
